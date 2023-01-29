@@ -1,0 +1,228 @@
+/* Global styles
+-------------------------*/
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing:initial;
+  }
+  body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+  }
+  h1, h2 {
+    font-family: cursive;
+    font-weight: 400;
+  }
+  h1 {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 40px;
+    margin-top: 0;
+  }
+  h3 {
+    margin: 0;
+  }
+  a {
+    color: #252b78;
+  }
+  a:hover {
+    text-decoration:dotted;
+  }
+  .content-wrap {
+    max-width: 1000px;
+    margin:0em;
+    padding: 50px 50px;
+    overflow: hidden;
+  }
+  .hide {
+     display:grid;
+  }
+  .uppercase {
+    text-transform: uppercase;
+  }
+  
+  
+  /* Header and Footer
+  -------------------------*/
+  header, footer {
+    background: #af7d7d;
+    color: #dddddd;
+  }
+  /* header */
+  header {
+    padding-top: 100px;
+    position:static;
+  }
+  header h1, header h2 {
+    color: #EDF2F4;
+    margin: 0;
+  }
+  .profile-img {
+    border-radius: 10%;
+  }
+  
+  .content-wrap img {
+    width: 200px;
+    height: 200px;
+  }
+  
+ 
+
+  
+  /* footer */
+  footer {
+    text-align:center;
+  }
+  .contact-info a {
+    padding: 20px;
+    display:ruby-base;
+  }
+  
+  
+  /* Navigation
+  -------------------------*/
+  nav {
+    text-align: center;
+    background: rgba(177, 216, 232, 0.64);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /*z-index: 100;*/
+  }
+ nav a {
+    display: inline-block;
+    padding: 15px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+  
+  
+  
+  
+  /* Education
+  -------------------------*/
+  .education {
+    background: linear-gradient(rgba(213, 188, 111,1.5), rgba(118, 160, 160, 0.5)),
+                url(../images/haskell_campus_building.jpg) no-repeat fixed;
+    background-size: cover;
+  }
+  p + h3 {
+    margin-top: 10px;
+  }
+  
+  
+  
+  /* Media Queries
+  -------------------------*/
+  @media (min-width: 900px) {
+    .col-narrow {
+      width: 30%;
+      float: left;
+    }
+    .col-wide {
+      width: 70%;
+      float: left;
+      padding-left: 20px;
+    }
+  }
+  @media (max-width: 899px){
+    header {
+      text-align: center;
+    }
+    .profile-img {
+      width: 200px;
+    }
+  }
+  /* Skills */
+.skills{
+  /* background-color: gray; */
+  color: rgb(209, 127, 13);
+  height: auto;
+  width: 50%;
+  display:grid;
+  /* flex-flow: row; */
+  flex-direction:column-reverse;
+}
+.skills-row{
+  flex: 1 1 auto;
+  border: 5px solid #4b583c;
+  padding: 20px 20px;
+  height:max-content;
+  width: 120%;
+  transition: transform 5s;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-flow: row; 
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.skills-entry{
+  background-color: rgb(12, 19, 73);
+  /* border-radius: 8px; */
+  flex: 0 1 auto;
+  width: 25%;
+  height: 60%;
+  padding: 10px 10px;
+  margin-top: 10px;
+}
+#Internships{
+  background: linear-gradient(rgba(154, 135, 168, 0.8), rgba(118, 160, 160, 0.5)),
+                url(../images/haskell_campus_building.jpg) no-repeat fixed;
+    background-size: cover
+}
+.projects{
+  display: flex;
+  flex-flow:nowrap;
+  width: 50%;
+  height:fit-content;
+  padding: 12px 12px;
+}
+.project-row{
+  flex: 1 0 auto;
+  width: auto;
+  height: auto;
+  margin: 0% 0%;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  /* background-color: rgb(99, 95, 95); */
+  color: rgb(19, 62, 60);
+  /* border-radius: 10px; */
+  border:5px solid rgb(162, 121, 121);
+}
+.project-card{
+  position:sticky;
+  border-radius: 8px;
+  width:fit-content;
+  transition: 2s;
+  transform-style:initial;
+  padding: 25px 25px;
+  margin: 12px 12px;
+  background-color: rgb(212, 171, 120);
+}
+.project-front, .project-back{
+  height:50%;
+  width: 50%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.project-front{
+  display: flex;
+  flex-flow: row;
+}
+.project-data{
+  flex: 1 1 auto;
+  width:50%;
+  height: auto;
+  text-align: left;
+}
+.project-back{
+  height: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotateX(180deg);
+}
